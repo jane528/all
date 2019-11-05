@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-3.4.1.js"></script>
+    <title>remove+empty</title>
+    <script>
+        $(function () {
+//        <input type="button" value="删除<li id='bj' name='beijing'>北京</li>" id="btn1">
+            $("#btn1").click(function () {
+                $("#bj").remove();
+            });
+//        <input type="button" value="删除所有子节点" id="btn2">
+            $("#btn2").click(function () {
+                $("#city").empty();
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="button" value="删除<li id='bj' name='beijing'>北京</li>" id="btn1">
+    <input type="button" value="删除city的li节点" id="btn2">
+
+    <ul id="city">
+        <li id="bj" name="beijing">北京</li>
+        <li id="tj" name="tianjin">天津</li>
+        <li id="cq" name="chongqing">重庆</li>
+    </ul>
+    <p class="hello">hello</p>how are <p>you ?</p>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.seek</groupId>
+    <artifactId>edu</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>edu-dao</module>
+        <module>edu-model</module>
+        <module>edu-service</module>
+        <module>edu-manager</module>
+        <module>edu-api</module>
+        <module>edu-service</module>
+    </modules>
+
+    <packaging>pom</packaging>
+
+    <properties>
+        <junit.version>4.11</junit.version>
+        <spring.version>4.3.25.RELEASE</spring.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+
+</project>

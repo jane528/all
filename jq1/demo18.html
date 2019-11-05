@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-3.4.1.js"></script>
+    <title>抽奖</title>
+    <style>
+        #img1ID{
+            width:100px;
+            height:100px;
+        }
+        #img2ID{
+            width:500px;
+            height:500px;
+        }
+    </style>
+    <script>
+        var imgs=[
+            "img/1.gif",
+            "img/2.gif",
+            "img/3.gif",
+            "img/4.gif",
+            "img/5.gif",
+            "img/6.gif",
+            "img/7.gif"
+        ];
+        var startid;//开始定时器的id
+        var index;
+        $(function(){
+            $("#btn1").click(function () {
+                //禁用开始按钮
+                $("#btn1").attr("disabled",true);
+                $("#btn2").attr("disabled",false);
+                $("#img2ID").attr("src","img/moren.jpg");
+                //图片的轮播
+                //1.定时器的方式实现图片切换
+                //2.切换小相框的src属性：定义数组，存放图片资源路径，生成随机数，数组的索引
+                startid = setInterval(function(){
+                    index = Math.floor(Math.random()*7);
+                    $("#img1ID").attr("src",imgs[index]);
+                },200);
+
+            });
+            $("#btn2").click(function () {
+                //禁用停止按钮
+                //清除定时器id
+                clearInterval(startid);
+                $("#btn2").attr("disabled",true);
+                $("#btn1").attr("disabled",false);
+                $("#img2ID").attr("src",imgs[index]);
+            });
+        });
+
+
+    </script>
+</head>
+<body>
+        <!--小相框-->
+        <div>
+            <img id="img1ID" src="img/1.gif">
+        </div>
+        <!--大相框-->
+        <div>
+            <img id="img2ID" src="img/moren.jpg">
+        </div>
+        <!--开始按钮-->
+        <input type="button" value="开始按钮" id="btn1" style="width:100px;height:100px;">
+        <!--停止按钮-->
+        <input type="button" value="结束按钮" id="btn2" style="width:100px;height:100px;">
+</body>
+</html>

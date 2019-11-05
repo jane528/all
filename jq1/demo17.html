@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-3.4.1.js"></script>
+    <title>广告显示和隐藏</title>
+    <script>
+
+        $(function(){
+            //1.页面加载完成之后3s显示广告
+            setTimeout(adShow,3000);
+            //2.广告显示5s之后，隐藏
+            setTimeout(adHide,8000);
+        });
+
+        //显示广告方法
+        function adShow(){
+            $("#ad").fadeIn("normal");
+        }
+        //隐藏广告方法
+        function adHide(){
+            $("#ad").fadeOut("normal");
+        }
+
+    </script>
+</head>
+<body>
+    <div>
+        <div id="ad" style="display: none">
+            <img style="width: 100%" src="img/back.png">
+        </div>
+
+        <div id="content">
+            正文部分
+        </div>
+    </div>
+</body>
+</html>

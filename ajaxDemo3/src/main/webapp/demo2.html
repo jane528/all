@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-3.4.1.js"></script>
+    <title>jquery方式ajax</title>
+    <script>
+        function fun(){
+            $.ajax({
+                url:"AjaxServlet",//请求路径
+                type:"POST",//请求方式
+                //data:"username='jack'&password='1234'",//第一种方式使用拼接字符串的方式
+                data:{
+                    username:"jack",
+                    password:"1234"
+                },
+                //请求响应成功后的回调函数 data为响应成功后服务器的返回数据
+                success:function(data){
+                    alert(data);
+                },
+                //请求响应出错后的回调函数
+                error:function () {
+                   alert("出错了！！");
+                },
+                //预期服务器返回的数据类型
+                dataType:"text",
+
+            })
+        }
+
+        function fun1(){
+            $.get(
+                "AjaxServlet",
+                {
+                    username:"jack1",
+                    password:"1234"
+                },
+                function(data){
+                    alert(data);
+                },"text"
+
+            )
+        }
+    </script>
+</head>
+<body>
+    <input type="button" id="btn" value="发送异步请求" onclick="fun()">
+    <input type="text" id="username">
+</body>
+</html>

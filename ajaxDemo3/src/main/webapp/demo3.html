@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-3.4.1.js"></script>
+    <title>json数据格式</title>
+    <script>
+        //1.定义基本的格式
+//        var p = {"username":"jack","password":"1234"};
+//        for(var key in p){
+//            alert(key +":"+p[key]);
+//        }
+        //alert(p);
+        //alert(p.username);
+        //alert(p.password);
+        //2.嵌套格式 -->{}中嵌套[]
+//        var persons = {
+//            "persons": [
+//                {"username": "jack", "password": "1234"},
+//                {"username": "rose", "password": "4567"}
+//            ]
+//        };
+//        alert(persons);
+//        var p = persons.persons;
+//        alert(p.length);
+//        for (i = 0; i < p.length; i++) {
+//            alert(p[i].username);
+//        }
+        //3.嵌套格式：--[]中嵌套{}
+        var persons = [
+            {"username":"jack","age":23},
+            {"username":"rose","age":30}
+        ];
+//        alert(persons);
+//        for(i=0;i<persons.length;i++){
+//            alert(persons[i].username);
+//        }
+        //traversal(for ...in.... )
+        for(var i=0;i<persons.length;i++){
+            for(var key in persons[i]){
+                alert(key+":"+persons[i][key]);
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

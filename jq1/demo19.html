@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-3.4.1.js"></script>
+    <title>插件</title>
+    <script>
+        $.fn.extend({
+                check:function () {
+                    this.attr("checked",true);
+                },
+                uncheck:function () {
+                    this.attr("checked",false);
+                }
+            }
+        );
+        $(function () {
+            $("#btn1").click(function () {
+                $("input[type='checkbox']").check();
+                alert($.min(5,3));
+            });
+            $("#btn2").click(function () {
+                $("input[type='checkbox']").uncheck();
+                alert($.max(5,3));
+            });
+            $.min(5,3)
+        });
+        $.extend({
+            min:function (a,b) {
+                return a<b?a:b;
+            },
+            max:function (a,b) {
+                return a>b?a:b;
+            }
+        });
+
+
+    </script>
+</head>
+<body>
+    <input type="button" value="点击选中复选框" id="btn1">
+    <input type="button" value="点击取消复选框选中" id="btn2">
+    <br>
+    <input type="checkbox" value="football">足球
+    <input type="checkbox" value="football">篮球
+    <input type="checkbox" value="football">排球
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-3.4.1.js"></script>
+    <title>用户名是否存在</title>
+    <script>
+        $(function () {
+            $("#username").focus();
+            $("#username").focus(function () {
+                $("#username-tips").show();
+                $("#username-result").hide();
+            });
+            $("#username").blur(function () {
+                var username = $("#username").val();
+                $("#username-tips").hide();
+                $("#username-result").html("");
+                //^匹配开始位置
+                //$匹配结束位置
+                //校验用户名格式是否正确(先不去校验格式是否正确)
+                //直接发送ajax请求,返回结果存在字段{UserExist:true}(存在：给出提示){UserExist:false}(不存在：显示正确)
+                $.ajax({
+                    url:"TestServlet",
+                    type:"POST",
+                    data:{
+                        username:username
+                    },
+                    success:function (data) {
+                       if(data.UserExist) {
+                           $("#username-result").html(data.msg);
+                       }
+                       else{
+                           $("#username-result").html("<img src='img/right.png'>")
+                       }
+                    }
+                });
+                $("#username-result").show();
+
+            });
+        });
+    </script>
+</head>
+<body>
+    <form>
+        <div>
+            用户名：<input type="text" id="username" placeholder="请设置用户名">
+            <span id="username-tips">设置后不可更改，中英文均可，最长14个英文或7个汉字</span>
+            <span id="username-result"></span>
+        </div>
+
+        <!--当用户名失去焦点后，先校验用户名的格式，如果格式不符合，
+        给出提示；如果格式符合，提交到后台判断用户名是否存在-->
+        <div>
+            手机号：<input type="text">
+        </div>
+
+        <input type="button" value="注册">
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-3.4.1.js"></script>
+    <title>下拉列表的左右移动</title>
+    <style>
+        #leftName , #btn,#rightName{
+            float: left;
+            width: 100px;
+            height: 300px;
+        }
+        #toRight,#toLeft{
+            margin-top:100px ;
+            margin-left:30px;
+            width: 50px;
+        }
+
+        .border{
+            height: 500px;
+            padding: 100px;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("#toRight").click(function () {
+                $("#rightName").append($("select[id='leftName'] option:selected"));
+            });
+            $("#toLeft").click(function () {
+                $("#leftName").append($("#rightName > option:selected"));
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="border">
+    <select id="leftName" multiple="multiple">
+        <option>山东</option>
+        <option>河南</option>
+        <option>北京</option>
+        <option>河北</option>
+        <option>天津</option>
+        <option>江苏</option>
+        <option>安徽</option>
+        <option>湖南</option>
+        <option>湖北</option>
+        <option>广东</option>
+        <option>广西</option>
+        <option>江西</option>
+        <option>重庆</option>
+        <option>四川</option>
+        <option>云南</option>
+    </select>
+    <div id="btn">
+        <button id="toRight">---></button>
+        <button id="toLeft"><---</button>
+    </div>
+
+    <select id="rightName" multiple="multiple">
+
+    </select>
+</div>
+</body>
+</html>

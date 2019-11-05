@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-3.4.1.js"></script>
+    <title>隔行换色+全选、全不选</title>
+    <style>
+        table,th,td
+        {
+            border:1px solid black;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("tr:gt(1):even").css("background-color","#F5F5F5");
+            $("tr:gt(1):odd").css("background-color","white");
+            $("#all").click(function () {
+                    $(".itemSelect").prop("checked",this.checked);
+            });
+        })
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><input type="button" value="删除"></td>
+        </tr>
+        <tr>
+            <th>
+                <input type="checkbox" id="all">
+            </th>
+            <th>
+                分类ID
+            </th>
+            <th>
+                分类名称
+            </th>
+            <th>
+                分类描述
+            </th>
+            <th>
+                操作
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" class="itemSelect">
+            </td>
+            <td>
+                1
+            </td>
+            <td>
+                手机数码
+            </td>
+            <td>
+                手机数码类商品
+            </td>
+            <td>
+                <a href="#">修改</a>
+                |
+                <a href="#">删除</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" class="itemSelect">
+            </td>
+            <td>
+                2
+            </td>
+            <td>
+                电脑办公
+            </td>
+            <td>
+                电脑办公类商品
+            </td>
+            <td>
+                <a href="#">修改</a>
+                |
+                <a href="#">删除</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" class="itemSelect">
+            </td>
+            <td>
+                3
+            </td>
+            <td>
+                鞋靴箱包
+            </td>
+            <td>
+                鞋靴箱包类商品
+            </td>
+            <td>
+                <a href="#">修改</a>
+                |
+                <a href="#">删除</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" class="itemSelect">
+            </td>
+            <td>
+                4
+            </td>
+            <td>
+               家居饰品
+            </td>
+            <td>
+                家居饰品类商品
+            </td>
+            <td>
+                <a href="#">修改</a>
+                |
+                <a href="#">删除</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

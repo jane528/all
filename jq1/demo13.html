@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-3.4.1.js"></script>
+    <title>遍历</title>
+    <script>
+        //1.使用jq对象.each()
+        $(function () {
+            //$("#city  li").each(function (i) {
+                //i:为下标
+               //alert(i+ this.innerHTML);
+              //alert(i+ $(this).text());
+            //});
+
+            //$("#city  li").each(function (i,elemnet) {
+                //elemnet.innerHTML 为js方式
+                //alert(i+ elemnet.innerHTML);
+            //});
+
+            $("#city  li").each(function (i,element) {
+                //如果城市为上海，则跳出循环
+               if("上海" == $(element).text()) {
+                   //return false结束循环相当于break   return true结束本次循环相当于continue
+                   //return false;
+                   return true;
+               }
+                //$(elemnet).text() 为jq方式
+                alert(i+ $(element).text());
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    <ul id="city">
+       <li>北京</li>
+       <li>上海</li>
+       <li>天津</li>
+       <li>重庆</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-3.4.1.js"></script>
+    <title>动画效果</title>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("#showDiv").hide(function () {
+                    alert("隐藏div");
+                });
+                //$("#showDiv").slideUp();
+                //$("#showDiv").fadeOut();
+            });
+            $("#btn2").click(function () {
+                //$("#showDiv").show();
+                //$("#showDiv").slideDown();
+                $("#showDiv").fadeIn();
+            });
+            $("#btn3").click(function () {
+                //$("#showDiv").toggle();
+                //$("#showDiv").slideToggle();
+                $("#showDiv").fadeToggle();
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="button" value="点击按钮隐藏div" id="btn1">
+    <input type="button" value="点击按钮显示div" id="btn2">
+    <input type="button" value="点击按钮切换div显示和隐藏" id="btn3">
+
+    <div id="showDiv" style="width:100px;height:100px;background-color:pink;">
+        div显示和隐藏
+    </div>
+</body>
+</html>

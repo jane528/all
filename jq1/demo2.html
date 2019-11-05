@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-3.4.1.js"></script>
+    <title>基本语法</title>
+    <script>
+        $(document).ready(function () {
+            //1.获取按钮
+            var btn = $("#btn");
+            btn.click(function(){
+                $("#div2").hide();
+
+            });
+            $("#div1").css({color:"#00FF00",border:"solid 1px red"});
+
+            $("#div2").click(function() {
+                $(this).css({
+                    width: function(index, value) {
+                        return parseFloat(value) * 1.2;
+                    },
+                    height: function(index, value) {
+                        return parseFloat(value) * 1.2;
+                    }
+                });
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <div id="div1">div1----</div>
+    <div id="div2">div2----</div>
+    <button id="btn"  type="button">点击事件</button>
+
+
+</body>
+</html>

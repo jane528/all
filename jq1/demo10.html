@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-3.4.1.js"></script>
+    <title>QQ表情</title>
+    <style>
+        ul{
+            list-style:none;
+            display:inline;
+        }
+        ul li{
+            display:inline-block;
+            margin-left:5px;
+        }
+    </style>
+    <script>
+        //点击QQ表情，将此表情追加到发言后
+        $(function () {
+            $("ul img").click(function () {
+                $(this).clone().appendTo($(".word"));
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <ul class="emoji">
+        <li><img src="img/1.gif" height="40px" width="40px" alt=""></li>
+        <li><img src="img/2.gif" height="40px" width="40px" alt=""></li>
+        <li><img src="img/3.gif" height="40px" width="40px" alt=""></li>
+        <li><img src="img/4.gif" height="40px" width="40px" alt=""></li>
+        <li><img src="img/5.gif" height="40px" width="40px" alt=""></li>
+        <li><img src="img/6.gif" height="40px" width="40px" alt=""></li>
+    </ul>
+    <p class="word" contentEditable="true">
+        <strong>请发言：</strong>
+        <img src="img/7.gif" height="40px" width="40px" alt="">
+    </p>
+</body>
+</html>

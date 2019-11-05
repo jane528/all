@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-3.4.1.js"></script>
+    <title>基础选择器</title>
+    <style type="text/css">
+        div,span{
+            width: 180px;
+            height: 180px;
+            margin: 20px;
+            background: #9999CC;
+            border: #000 1px solid;
+            float:left;
+            font-size: 17px;
+            font-family:Roman;
+        }
+
+        div .mini{
+            width: 50px;
+            height: 50px;
+            background: #CC66FF;
+            border: #000 1px solid;
+            font-size: 12px;
+            font-family:Roman;
+        }
+
+        div .mini01{
+            width: 50px;
+            height: 50px;
+            background: #CC66FF;
+            border: #000 1px solid;
+            font-size: 12px;
+            font-family:Roman;
+        }
+
+    </style>
+    <script>
+        $(document).ready(function () {
+            var btn2 = $("#btn2");
+            var btn3 = $("#btn3");
+            var btn4 = $("#btn4");
+            var btn5 = $("#btn5");
+            var btn6 = $("#btn6");
+            var btn7 = $("#btn7");
+            var btn8 = $("#btn8");
+            var btn9 = $("#btn9");
+            var btn10 = $("#btn10");
+            var btn11 = $("#btn11");
+            var btn12 = $("#btn12");
+            var btn13 = $("#btn13");
+            btn2.click(function () {
+                $("#one").css({"background-color":"red"});
+            });
+            btn3.click(function () {
+                $("div").css({"background-color":"red"});
+            });
+            btn4.click(function () {
+                $(".mini").css({"background-color":"red"});
+            });
+            btn5.click(function () {
+                $("span,#two").css({"background-color":"red"});
+            });
+            btn6.click(function () {
+                $(".one .mini").css({"background-color":"red"});
+            });
+            btn7.click(function () {
+              $(".one > .mini").css({"background-color":"red"});
+            });
+            btn8.click(function () {
+                $("div[id='one']").css({"background-color":"pink"});
+            });
+            btn9.click(function () {
+                $("div[id!='one']").css({"background-color":"pink"});
+            });
+            btn10.click(function () {
+                $("div[id^='on']").css({"background-color":"pink"});
+            });
+            btn11.click(function () {
+                $("div[id$='wo']").css({"background-color":"pink"});
+            });
+            btn12.click(function () {
+                $("div[id*='w']").css({"background-color":"pink"});
+            });
+            btn13.click(function () {
+                $("div[id][class='mini']").css({"background-color":"pink"});
+            });
+            $("#btn14").click(function () {
+                $("div:first").css({"background-color":"pink"});
+            });
+            $("#btn15").click(function(){
+                $("div:last").css({"background-color":"pink"})
+            });
+            $("#btn16").click(function () {
+                $("div:not(.one)").css({"background-color":"pink"});
+            });
+            $("#btn17").click(function () {
+                $("div:even").css({"background-color":"pink"});
+            });
+            $("#btn18").click(function () {
+                $("div:odd").css({"background-color":"pink"});
+            });
+            $("#btn19").click(function () {
+                $("div:gt(3)").css({"background-color":"pink"});
+            });
+            $("#btn20").click(function () {
+                $("div:eq(3)").css({"background-color":"pink"});
+            });
+            $("#btn21").click(function () {
+                $("div:lt(3)").css({"background-color":"pink"});
+            });
+            $("#btn22").click(function () {
+                $(":header").css({"background-color":"pink"});
+            });
+            $("#btn24").click(function () {
+                $("input[type='text']:enabled").val("ceshi");
+            });
+            $("#btn25").click(function () {
+                $("input[type='text']:disabled").val("ceshi");
+            });
+            $("#btn26").click(function () {
+                alert($("input:checked").length);
+            });
+            $("#btn27").click(function () {
+               alert($("select option:selected").length);
+            });
+            $("#btn28").click(function () {
+                alert($("h1").html());
+            });
+            $("#btn29").click(function () {
+                $("h1").html("hello world!!");
+            });
+            $("#btn30").click(function () {
+                $("h1").html(function (n) {
+                    return n;
+                });
+            });
+            $("#btn31").click(function () {
+                alert($("h1").text());
+            });
+            $("#btn32").click(function () {
+                $("h1").text("hello world!!");
+            });
+            $("#btn33").click(function () {
+                $("h1").text(function (n) {
+                    return n;
+                });
+            });
+            $("#btn34").click(function () {
+                alert($("input[id='username']").val());
+            });
+            $("#btn35").click(function () {
+                $("input[id='username']").val("hello world!!");
+            });
+            $("#btn36").click(function () {
+                $("input[id='username']").val(function (n) {
+                    return n;
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <input type="button" id="btn1" value="保存">
+    <input type="button" id="btn2" value="改变id为one的元素的背景为红色">
+    <input type="button" id="btn3" value="改变元素名为<div>的所有元素的背景为红色">
+    <input type="button" id="btn4" value="改变class为mini的所有元素的背景色为红色">
+    <input type="button" id="btn5" value="改变所有的<span>元素和id为two的元素的背景色为红色">
+    <input type="button" id="btn6" value="改变class为one下的所有class为mini的元素的背景色为红色">
+    <input type="button" id="btn7" value="改变class为one下的所有class为mini的子元素的背景色为红色">
+    <input type="button" id="btn8" value="改变id为one的div元素背景色为粉色">
+    <input type="button" id="btn9" value="改变id不为one的div元素背景色为粉色">
+    <input type="button" id="btn10" value="改变id以on开头的div元素背景色为粉色">
+    <input type="button" id="btn11" value="改变id以wo结尾的div元素背景色为粉色">
+    <input type="button" id="btn12" value="改变id包含W的div元素背景色为粉色">
+    <input type="button" id="btn13" value="改变包含id属性，class为mini的div元素背景色为粉色">
+    <input type="button" id="btn14" value="改变第一个div元素的背景色为红色">
+    <input type="button" id="btn15" value="改变最后一个div元素的背景色为红色">
+    <input type="button" id="btn16" value="改变class不为one的所有div元素背景色为红色">
+    <input type="button" id="btn17" value="改变索引值为偶数的div元素的背景色为红色">
+    <input type="button" id="btn18" value="改变索引值为奇数的div元素的背景色为红色">
+    <input type="button" id="btn19" value="改变索引值大于3的div元素的背景色为红色">
+    <input type="button" id="btn20" value="改变索引值等于3的div元素的背景色为红色">
+    <input type="button" id="btn21" value="改变索引值小于3的div元素的背景色为红色">
+    <input type="button" id="btn22" value="改变所有标题元素的背景色为红色">
+    <input type="button" id="btn24" value="通过val()方法改变表单内可用元素的值">
+    <input type="button" id="btn25" value="通过val()方法改变表单内不可用元素的值">
+    <input type="button" id="btn26" value="通过length属性获取复选框选中的个数">
+    <input type="button" id="btn27" value="通过length属性获取下拉框选中的个数">
+    <input type="button" id="btn28" value="html获取h1标签的值">
+    <input type="button" id="btn29" value="html修改h1标签的值为hello world">
+    <input type="button" id="btn30" value="html回调函数">
+    <input type="button" id="btn31" value="text获取h1标签的值">
+    <input type="button" id="btn32" value="text修改h1标签的值为hello world">
+    <input type="button" id="btn33" value="text回调函数">
+    <input type="button" id="btn34" value="val获取input username的值">
+    <input type="button" id="btn35" value="val修改input username值为hello world">
+    <input type="button" id="btn36" value="val回调函数">
+
+    <h1>有一种奇迹叫坚持</h1>
+    <h2>自信源于努力</h2>
+    <h1>自信源于努力</h1>
+
+
+    <div id="one">id为one</div>
+    <div id="two" class="mini">
+        id为two class是mini
+        <div class="mini">class是mini</div>
+    </div>
+    <div class="one">
+        class是one
+        <div class="mini">
+            class是mini
+            <div class="mini">class是mini</div>
+        </div>
+        <div class="mini">class是mini</div>
+    </div>
+    <div class="one">
+        class是one
+        <div class="mini01">class是mini01</div>
+        <div class="mini">class是mini</div>
+    </div>
+    <span class="spanone"> class是spanone的span元素</span>
+    <span class="mini"> class是mini的span元素</span>
+        <form>
+            用户名
+            <input type="text" value="zhang" id="username" name="username"><br>
+            密码
+            <input type="text" value="1234" id="password" name="username" disabled><br>
+            <input type="checkbox" value="篮球">篮球
+            <input type="checkbox" value="足球">足球
+            <input type="checkbox" value="乒乓球">乒乓球
+            <input type="checkbox" value="排球">排球
+            <select multiple id="op">
+                <option>选择1</option>
+                <option>选择2</option>
+                <option>选择3</option>
+                <option>选择4</option>
+            </select>
+
+
+        </form>
+
+
+</body>
+</html>

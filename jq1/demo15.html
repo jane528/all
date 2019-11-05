@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-3.4.1.js"></script>
+    <title>事件绑定</title>
+    <script>
+        $(function () {
+            //1.获取name对象，绑定click事件
+//            $("#name").click(function () {
+//                alert("我点击了绑定点击事件按钮");
+//            });
+            //给name绑定鼠标移动到元素上事件，绑定鼠标移出事件
+//            $("#name").mouseover(function () {
+//                alert("鼠标被移到按键上");
+//            });
+//            $("#name").mouseout(function(){
+//                alert("鼠标从按键上移出");
+//            });
+            //链式编程
+//            $("#name").mouseover(function () {
+//                alert("鼠标被移到按键上");
+//            }).mouseout(function () {
+//                alert("鼠标从按键上移出");
+//            });
+//            $("#name").hover(function () {
+//                alert("移动到按键上");
+//            },function(){
+//                alert("鼠标移出按键");
+//            });
+            //元素获取焦点
+//            $("#name1").focus();
+//            $("form:first").submit(function () {
+//                alert("提交表单了。。。。")
+//            });
+            //使用on方法绑定事件
+//            $("#name").on("click",function () {
+//                alert("你点击了按钮元素。。。");
+//            })
+//            //使用off方法解绑事件
+//            $("#name").off("click");
+
+            //鼠标移动到元素上
+//            $("#name").on("mouseover",function(){
+//                alert("鼠标移动到了元素上");
+//            });
+//            $("#name").on("mouseout",function(){
+//                alert("鼠标移出了元素");
+//            });
+            //toggle()使用
+            $("#btn").toggle(function () {
+                $("#div1").css("background-color","red");
+            },function () {
+                $("#div1").css("background-color","green");
+            });
+
+        });
+    </script>
+</head>
+<body>
+        <input id="name" type="button" value="绑定点击事件">
+        <input id="name1" type="text" value="输入框点击事件">
+        <input id="btn" type="button" value="事件切换">
+    <div style="border:solid 1px red;height:200px;width:200px;" id="div1">
+        点击按钮变成绿色，再次点击变成红色
+    </div>
+</body>
+</html>

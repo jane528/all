@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-3.4.1.js"></script>
+    <title>crud操作</title>
+    <script>
+
+          $(function () {
+              //        <input type="button" value="将反恐放置到city的后面" id="btn1">
+              $("#btn1").click(function () {
+                  $("#city").append($("#fk"));
+              });
+              //        <input type="button" value="将反恐放置到city的前面" id="btn2">
+              $("#btn2").click(function () {
+                  $("#city").prepend($("#fk"));
+              });
+              //        <input type="button" value="将反恐插入到天津后面" id="btn3">
+             $("#btn3").click(function () {
+                 $("#tj").after($("#fk"));
+             });
+              //        <input type="button" value="将反恐插入到天津前面" id="btn4">
+              $("#btn4").click(function () {
+                  $("#tj").before($("#fk"));
+              });
+          })
+
+
+
+    </script>
+</head>
+<body>
+    <input type="button" value="将反恐放置到city的后面" id="btn1">
+    <input type="button" value="将反恐放置到city的前面" id="btn2">
+    <input type="button" value="将反恐插入到天津后面" id="btn3">
+    <input type="button" value="将反恐插入到天津前面" id="btn4">
+    <input type="button" value="测试" id="btn5">
+    <ul id="city">
+        <li id="bj" name="beijing">北京</li>
+        <li id="tj" name="tianjin">天津</li>
+        <li id="cq" name-="chongqing">重庆</li>
+    </ul>
+
+    <ul id="love">
+        <li id="fk" name="fankong">反恐</li>
+        <li id="xj" name="xingji">星际</li>
+    </ul>
+    <div id="fool">hello1</div>
+</body>
+</html>

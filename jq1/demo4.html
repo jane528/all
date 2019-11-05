@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-3.4.1.js"></script>
+    <title>Dom内容操作</title>
+    <script>
+        $(document).ready(function () {
+
+            //获取myinput的value值
+            alert($("#myinput").val());
+            $("#myinput").val("李四");
+            //获取mydiv的标签体内容
+            alert($("#mydiv").html());
+            //$("#mydiv").html("hello world!!!");
+            //获取mydiv文本内容
+            alert($("#mydiv").text());
+            $("#mydiv").text("go go liquid");
+        });
+
+    </script>
+</head>
+<body>
+    <input id="myinput" type="text" name="username" value="张三"><br>
+    <div id="mydiv"><p><a href="#">标题标签</a></p></div>
+</body>
+</html>

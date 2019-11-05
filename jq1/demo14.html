@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-3.4.1.js"></script>
+    <title>遍历</title>
+    <script>
+        $(function () {
+            //$.each($("#city li"),function (i,n) {
+                //js
+               // alert(i+n.innerHTML);
+           // })
+            $.each($("#city li"),function (i,n) {
+                //jquery
+                alert(i+$(n).text());
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul id="city">
+        <li>北京</li>
+        <li>上海</li>
+        <li>天津</li>
+        <li>重庆</li>
+    </ul>
+</body>
+</html>

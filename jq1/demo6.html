@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-3.4.1.js"></script>
+    <title>class属性</title>
+    <style type="text/css">
+        div,span{
+            width: 180px;
+            height: 180px;
+            margin: 20px;
+            background: #9999CC;
+            border: #000 1px solid;
+            float:left;
+            font-size: 17px;
+            font-family:Roman;
+        }
+
+        div .mini{
+            width: 50px;
+            height: 50px;
+            background: #CC66FF;
+            border: #000 1px solid;
+            font-size: 12px;
+            font-family:Roman;
+        }
+
+        div .mini01{
+            width: 50px;
+            height: 50px;
+            background: #CC66FF;
+            border: #000 1px solid;
+            font-size: 12px;
+            font-family:Roman;
+        }
+
+    </style>
+    <style>
+        .addone{
+            background-color:pink;
+        }
+
+    </style>
+    <script>
+        $(document).ready(function () {
+//        <input type="button" id="btn2" value="采用属性增加样式（改变id=one的样式）">
+            $("#btn2").click(function () {
+                $("#one").prop("class","addone");
+            });
+//        <input type="button" id="btn3" value="addclass">
+            $("#btn3").click(function () {
+                $("#one").addClass("addone");
+            });
+//        <input type="button" id="btn4" value="removeclass">
+            $("#btn4").click(function () {
+                $("#one").removeClass("addone");
+            });
+//        <input type="button" id="btn5" value="切换样式">
+            $("#btn5").click(function () {
+                $("#one").toggleClass("addone");
+            });
+//        <input type="button" id="btn6" value="通过css()获得id为one背景颜色">
+            $("#btn6").click(function () {
+                alert($("#one").css("background-color"));
+            });
+//        <input type="button" id="btn7" value="通过css()获得id为one背景颜色为绿色">
+            $("#btn7").click(function () {
+                $("#one").css("background-color","green");
+            });
+            $("#btn8").click(function () {
+                $("p").append("hello <b>world</b>!!!");
+            });
+            $("#btn9").click(function () {
+                $("p").prepend("hello world!!");
+            });
+            $("#btn10").click(function () {
+                $("p").appendTo("a");
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <input type="button" id="btn1" value="保存">
+    <input type="button" id="btn2" value="采用属性增加样式（改变id=one的样式）">
+    <input type="button" id="btn3" value="addclass">
+    <input type="button" id="btn4" value="removeclass">
+    <input type="button" id="btn5" value="切换样式">
+    <input type="button" id="btn6" value="通过css()获得id为one背景颜色">
+    <input type="button" id="btn7" value="通过css()获得id为one背景颜色为绿色">
+    <input type="button" id="btn8" value="父元素将子元素追加到末尾">
+    <input type="button" id="btn9" value="父元素将子元素追加到开头">
+    <input type="button" id="btn10" value="将p追加到a">
+    <h1>有一种奇迹叫坚持</h1>
+    <h2>自信源于努力</h2>
+    <div id="one">id为one</div>
+    <div id="two" class="mini">
+        id为two class是mini
+        <div class="mini">class是mini</div>
+    </div>
+    <div class="one">
+        class是one
+        <div class="mini">
+            class是mini
+            <div class="mini">class是mini</div>
+        </div>
+        <div class="mini">class是mini</div>
+    </div>
+    <div class="one">
+        class是one
+        <div class="mini01">class是mini01</div>
+        <div class="mini">class是mini</div>
+    </div>
+    <span class="spanone"> class是spanone的span元素</span>
+    <span class="mini"> class是mini的span元素</span>
+    <p>测试父元素将子元素追加到末尾</p>
+    <a></a><a></a>
+</body>
+</html>
