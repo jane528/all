@@ -19,7 +19,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <junit.version>4.11</junit.version>
+        <junit.version>4.13.1</junit.version>
         <spring.version>4.3.25.RELEASE</spring.version>
     </properties>
 
